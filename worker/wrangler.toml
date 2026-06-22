@@ -6,7 +6,7 @@ compatibility_date = "2024-01-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "hsk-db"
-database_id = "local-hsk-db"
+database_id = "34bf2f01-9504-4654-9943-e5c49d5d981f"
 
 # KV Namespace binding (for sessions/cache if needed)
 [[kv_namespaces]]
