@@ -1,0 +1,19 @@
+{
+  "name": "hsk-api",
+  "version": "1.0.0",
+  "description": "HSK Learning Platform API running on Cloudflare Workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "wrangler deploy",
+    "db:setup": "wrangler d1 execute hsk-db --local --file=../seed/schema.sql && wrangler d1 execute hsk-db --local --file=../seed/hsk_data.sql"
+  },
+  "dependencies": {
+    "hono": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240101.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.0.0"
+  }
+}

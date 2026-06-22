@@ -1,0 +1,8 @@
+name = "hsk-learn"
+pages_build_output_dir = "dist"
+
+# Configure routes rules
+[[redirects]]
+status = 200
+from = "/*"
+to = "/index.html"

@@ -1,0 +1,32 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cloudflare Wrangler local state & databases
+.wrangler/
+.dev.vars
+
+# Frontend build outputs
+frontend/dist/
+frontend/.svelte-kit/
+frontend/.next/
+
+# Environment files and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+
+# IDEs & System files
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

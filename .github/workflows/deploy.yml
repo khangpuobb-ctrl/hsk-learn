@@ -1,0 +1,32 @@
+name: Deploy Worker API to Cloudflare
+
+on:
+  push:
+    branches:
+      - main # Chạy tự động khi bạn push code lên nhánh main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build & Deploy Worker
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: worker/package.json
+
+      - name: Install Worker Dependencies
+        run: |
+          cd worker
+          npm ci
+
+      - name: Deploy Worker via Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: 'worker'

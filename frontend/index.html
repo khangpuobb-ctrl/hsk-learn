@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="vi" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Tags -->
+    <title>HSK Bilingual - Học Tiếng Trung Song Ngữ (Anh - Trung - Việt)</title>
+    <meta name="description" content="Nền tảng học từ vựng và bài đọc HSK song ngữ tốt nhất. Tích hợp thuật toán lặp lại ngắt quãng SM-2, hệ thống flashcard 3D, bài đọc tương tác từ điển và kiểm tra nghe nói viết." />
+    <meta name="keywords" content="hsk, học tiếng trung, từ vựng hsk, flashcard tiếng trung, bài đọc tiếng trung, spaced repetition" />
+    <meta name="author" content="HSK Bilingual Team" />
+    
+    <!-- Google Fonts: Inter and Noto Serif SC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA Manifest link -->
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+  <body class="h-full bg-sand text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((reg) => console.log('Service Worker registered successfully:', reg.scope))
+            .catch((err) => console.error('Service Worker registration failed:', err));
+        });
+      }
+    </script>
+  </body>
+</html>
